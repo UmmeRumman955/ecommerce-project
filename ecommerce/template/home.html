@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        border-radius: border-box;
+    }
+    body{
+        background-color: rgb(212, 243, 98);
+    }
+
+    h1{
+        text-align: center;
+    } 
+    button{
+        text-align: center;
+        margin-left: 600px;
+        margin-top: 100px;
+    }     
+</style>
+
+<body>
+     <h1>Welcome {{request.user}}</h1> <br>
+     <a href="{% url 'signout' %}"><button class="btn btn-primary">logout</button></a>     
+</body>
+
+
+
+{% endblock %}

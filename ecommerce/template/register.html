@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Register {% endblock %}
+
+{% block content %}
+
+<style>
+    .card{
+        background-color: aqua;
+        width:500px;
+        padding: 20px;
+        margin: 80px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1{
+        text-align: center;
+    }
+</style>
+
+<div class="card">
+    <form action="" method="post">
+        <h1>Register form</h1>
+    
+        {% load crispy_forms_tags %}
+            {% csrf_token %}
+            {{form|crispy}} <br>
+            <input type="submit" value="register" class="btn btn-dark">
+            <a href="{% url 'signin' %}">Already have an Account</a>
+    </form>
+</div>
+
+{% endblock %}
