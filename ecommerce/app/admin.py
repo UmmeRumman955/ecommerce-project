@@ -68,7 +68,7 @@ class ProductVariationAdmin(admin.ModelAdmin):
 #USer Model
 @admin.register(UserModel) 
 class UserModelAdmin(admin.ModelAdmin): 
-    list_display = ['user_id', 'username', 'email', 'full_name', 'phone_number'] 
+    list_display = ['phone_number'] 
  
 @admin.register(Address) 
 class AddressAdmin(admin.ModelAdmin): 
@@ -76,7 +76,7 @@ class AddressAdmin(admin.ModelAdmin):
  
 @admin.register(Payment) 
 class PaymentAdmin(admin.ModelAdmin): 
-    list_display = ['id', 'user', 'amount', 'timestamp'] 
+    list_display = ['id', 'user', 'amount', 'timestamp', 'stripe_charge_id'] 
  
      
  
@@ -88,7 +88,7 @@ class OrderItemAdmin(admin.ModelAdmin):
 @admin.register(Order) 
 class OrderAdmin(admin.ModelAdmin): 
     list_display = [ 
-        'id', 'user', 'ref_code', 'ordered', 'being_delivered',  
+        'id', 'user', 'start_date','ordered_date','ordered', 'being_delivered',  
         'received', 'refund_requested', 'refund_granted' 
     ]
     
